@@ -27,14 +27,14 @@ jobs:
             stack config set system-ghc --global true
 
       - run:
-          name: Statically compile Yesod app
+          name: Compile Yesod app
           command: |
             stack --local-bin-path ~/app/dist install #--ghc-options '-optl-static -fPIC'
 
       - run:
           name: Run tests
           command: |
-            stack test
+           # stack test
 
       - save_cache:
           key: stack-work-cache-{{ arch }}
