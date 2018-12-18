@@ -62,5 +62,5 @@ jobs:
               git config --global user.name "AJ/ (CI)"
               git add -f dist
               git commit -m "Deployment: Add dist folder"
-              git push -f heroku master
+              git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
             fi
